@@ -1,0 +1,17 @@
+ul#Home-tab.nav-tabs > li > a{
+    color: #343a40;
+}
+
+ul#Home-tab.nav-tabs > li > a.active{
+    background-color: #343a40;
+    color: #ffffff;
+}
+
+.card-deck.override{
+    text-align: center;
+}
+
+.card-title{
+    font-size: 1.75rem;
+    font-weight: 400;
+}

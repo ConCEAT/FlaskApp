@@ -1,0 +1,46 @@
+ul#Game-tab.nav-tabs > li > a{
+    color: #343a40;
+}
+
+ul#Game-tab.nav-tabs > li > a.active{
+    background-color: #343a40;
+    color: #ffffff;
+}
+
+#numberOfChallange{
+    max-width: 10rem;
+}
+
+.shuffle-information{
+    max-width: 25rem;
+}
+
+.challange-title{
+    font-size: 1.75rem;
+    font-weight: 300;
+}
+
+.challange-content{
+    font-size: 1.1rem;
+    font-weight: 350;
+}
+
+#HistoryList{
+    max-height: 60vh;
+    margin-bottom: 10px;
+    overflow-y:auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.display-7{
+    line-height: 110%;
+    text-align: left !important;
+}
+/*updown arows dissapear*/
+input[type="number"]::-webkit-outer-spin-button,input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}

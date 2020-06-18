@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="pl-PL">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--Bootstrap CSS-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    
+    <!--Own CSS-->
+    <link rel="stylesheet" href="/static/css/base.css">
+
+    <link rel="shortcut icon" href="/static/images/logo/favicon.png" type="image/png">
+    <title>Błąd 404</title>
+  </head>
+  <body>
+    <!--Navigation Bar-->
+    {{components.navbar()|safe}}
+    <!--/Navigation Bar-->
+    <!--Main card-->
+    <div class="card-deck mx-2 mt-3 mb-0">
+      <div class="card border-secondary m-3">
+        <div class="card-body pb-3">
+          <h1 class="display-4 ml-2">Błąd 404</h1>
+          <p class="lead ml-2">Nie udało nam się znaleźć strony, o którą pytasz.</p>
+          <a class="text-decoration-none display-7 m-2" href="{{url_for('home')}}">Wróć do strony głównej</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/Main card-->
+  </body>
+</html>

@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="pl-PL">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--Bootstrap CSS-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    
+    <!--Own CSS-->
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link rel="stylesheet" href="/static/css/home.css">
+
+    <link rel="shortcut icon" href="/static/images/logo/favicon.png" type="image/png">
+    <title>JengaFun</title>
+  </head>
+  
+  <body>
+    <!--Navigation Bar-->
+    {{components.navbar()|safe}}
+    <!--/Navigation Bar-->
+    <!--Main card-->
+    <div class="card-deck mx-2 mt-3 mb-0">
+      <div class="card border-secondary m-3">
+        <div class="card-body pb-0">
+
+          <h1 class="display-4 ml-2">Alkojenga</h1>
+          <p class="lead ml-2">Przygotowanie do zabawy</p>
+
+          <ul class="nav nav-tabs" id="Home-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <a class="nav-link active" id="NeedsGame-tab" data-toggle="tab" href="#NeedsGame" role="tab" aria-controls="NeedsGame" aria-selected="true">Wymagania</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" id="NeedsAplication-tab" data-toggle="tab" href="#NeedsAplication" role="tab" aria-controls="NeedsAplication" aria-selected="false">Aplikacja</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" id="Rules-tab" data-toggle="tab" href="#Rules" role="tab" aria-controls="Rules" aria-selected="false">Zasady rozgrywki</a>
+            </li>
+          </ul>
+          <div class="tab-content p-2" id="Home-tabContent">
+            
+            <div class="tab-pane fade show active" id="NeedsGame" role="tabpanel" aria-labelledby="NeedsGame-tab">
+              <p class="primary-text mb-2">Do gry niezbędne są:</p>
+              <ul class="mb-2">
+                <li>wieża Jenga z klockami ponumerowanymi od 1 wzwyż</li>
+                <li>gracze</li>
+                <li>nasza aplikacja</li>
+                <li>sporo alkoholu</li>
+              </ul>
+              <p class="primary-text mb-2">Alkojenga oparta jest na spożywaniu alkoholu, dlatego wskazane jest, aby grały w nią osoby <u>powyżej 18 roku życia.</u></p>
+              <p class="primary-text mb-0">Picie alkoholu możecie zamienić na kwaśny sok, kawałek młodego imbiru lub cokolwiek ostrego.</p> 
+              <p class="secondary-text">Pamiętajcie jednak, że picia w grze jest sporo i zamiennik nie powinien sprawiać zbyt dużych kłopotów.</p>
+            </div>
+
+            <div class="tab-pane fade" id="NeedsAplication" role="tabpanel" aria-labelledby="NeedsAplication-tab">
+              <p class="primary-text mb-2">Dlaczego warto korzystać z aplikacji kiedy można po prostu wypisać zadania na klockach?</p>
+              <p class="secondary-text">Miejsce na klocku może być sporym ograniczeniem do zapisania niektórych zadań. Ponadto uniemożliwia (przynajmniej bardzo utrudnia) ewentualną zmianę zadania.</p>
+              <p class="primary-text mb-2">A gdyby wypisać zadania z przyporządkowanymi numerami na kartce obok?</p>
+              <p class="secondary-text">Już po jednej rozgrywce numery, do których przyporządkowane są najciekawsze lub najcięższe zadania zostałyby zapamiętane przez graczy. W kolejnych grach klocki o tych numerach byłyby umyślnie wybierane lub unikane. Ewentualnie pojawiłaby się konieczność przepisania zadań w innej kolejności. Tak właśnie zrodził się pomysł na tę aplikację.</p>
+            </div>
+
+            <div class="tab-pane fade" id="Rules" role="tabpanel" aria-labelledby="Rules-tab">
+              <p class="primary-text mb-1">Układanie wieży oraz wyciąganie klocków odbywa się według <a class="text-decoration-none" href="https://en.wikipedia.org/wiki/Jenga#Rules" target="_blank">standardowych zasad gry w Jengę</a>.</p>
+              <p class="secondary-text">Nie wolno wyciągać klocków z dwóch najwyższych warstw wieży.</p>
+              <p class="primary-text mb-0">Po wyjęciu klocka należy wpisać liczbę umieszczoną na klocku i sprawdzić zadanie, przypisane do tego numeru.</p>
+              <p class="secondary-text">Następnie postępować zgodnie z zadaniem.</p>
+              <p class="primary-text mb-0">Gra kończy się w momencie przewrócenia wieży lub klocka, który nie był wyciągany.</p>
+              <p class="secondary-text">Karę za przewrócenie wieży wymyślacie sami.</p>
+              <p class="primary-text">Przed każdą kolejną grą przetasujcie zadania, dzięki czemu te same liczby będą odpowiadały zupełnie innym zadaniom niż poprzednio.</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/Main card-->
+    <!--Menu cards-->
+    <div class="card-deck mx-2 mt-0 mb-3 override">
+      
+      <div class="card border-secondary m-3" id="SzybkaGra">
+        <img src="/static/images/home/jenga.jpg" class="card-img-top" alt="Image of Jenga">
+        <div class="card-body">
+          <p class="display-6">Szybka Gra</p>
+          <p class="card-text">Od razu rozpocznij grę z domyślnym zestawem zadań stworzonym przez nas.</p>
+        </div>
+        <a role="button" href="{{url_for('game')}}" class="btn btn-outline-dark btn-lg mx-5 my-3">Graj</a>
+      </div>
+      
+      <div class="card border-secondary m-3" id="Dostosuj">
+        <img src="/static/images/home/shots.jpeg" class="card-img-top" alt="Alcohol shots">
+        <div class="card-body">
+          <p class="display-6">Własne zadania</p>
+          <p class="card-text">Edytuj lub dodaj zadania w gotowym zestawie albo stwórz całkowicie nowy zestaw zadań.</p>
+        </div>
+        <button type="button" class="btn btn-outline-dark btn-lg mx-5 my-3" disabled>
+          Niedostępne
+        </button>
+      </div>
+      
+      <div class="card border-secondary m-3" id="Top">
+        <img src="/static/images/home/community.jpg" class="card-img-top" alt="Jan Paweł II">
+        <div class="card-body">
+          <p class="display-6">Zestawy graczy</p>
+          <p class="card-text">Zagraj i oceniaj zestawy zadań stworzone przez innych graczy.</p>
+        </div>
+        <button type="button" class="btn btn-outline-dark btn-lg mx-5 my-3" disabled>
+          Niedostępne
+        </button>
+      </div>
+    </div>
+    <!--/Menu cards-->
+    
+    <!--Bootstrap JS-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+  </html>
